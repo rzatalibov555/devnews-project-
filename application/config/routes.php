@@ -56,7 +56,13 @@ $route['category']  = 'UserController/category';
 $route['single']    = 'UserController/single';
 $route['contact']   = 'UserController/contact';
 
+// ====================== Admin Start =======================================
+$route['login_dashboard']  = 'AdminController/index';
+$route['admin_dashboard']  = 'AdminController/dashboard';
+$route['admin_news']       = 'AdminController/news';
 
+
+// ====================== Admin End   =======================================
 
 
 
