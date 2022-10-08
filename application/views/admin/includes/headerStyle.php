@@ -1,3 +1,12 @@
+
+<?php if(!isset($_SESSION['admin_login_id'])){
+  $this->session->set_flashdata('err','Zehmet olmasa username ve password daxil edin!');
+  redirect(base_url('login_dashboard'));
+} ?>
+
+
+
+
 <!DOCTYPE html>
 
 

@@ -58,6 +58,10 @@ $route['contact']   = 'UserController/contact';
 
 // ====================== Admin Start =======================================
 $route['login_dashboard']  = 'AdminController/index';
+$route['login_act']        = 'AdminController/login_act';
+$route['log_out']          = 'AdminController/log_out';
+
+
 $route['admin_dashboard']  = 'AdminController/dashboard';
 $route['admin_news']       = 'AdminController/news';
 
