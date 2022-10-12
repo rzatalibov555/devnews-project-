@@ -55,7 +55,12 @@ class AdminController extends CI_Controller{
     // ====================== NEWS START ============================
 
     public function news(){
-        $this->load->view('admin/news/news');
+        $data['get_all_news'] = $this->db
+        ->order_by('n_id','DESC')
+        ->join('admin','admin.a_id = news.n_creator_id','left')
+        ->get('news')->result_array();
+
+        $this->load->view('admin/news/news',$data);
     }
 
     public function news_create(){
@@ -69,7 +74,33 @@ class AdminController extends CI_Controller{
         $date           = $_POST['date'];
         $category       = $_POST['category'];
         $status         = $_POST['status'];
-        
+
+        if(!empty($title) && !empty($description) && !empty($date) && !empty($category) && !empty($status)){
+
+            $data = [
+                'n_title'       => $title,
+                'n_description' => $description,
+                'n_date'        => $date,
+                'n_category'    => $category,
+                'n_status'      => $status,
+                // 'n_img' => "",
+                'n_creator_id' => $_SESSION['admin_login_id'],
+                'n_create_date' => date("Y-m-d H:i:s")
+            ];
+    
+            // insert to db code
+            $this->db->insert('news',$data);
+    
+            // notification
+            $this->session->set_flashdata('success',"Xəbər uğurla əlavə olundu!");
+            
+            // redirect page
+            redirect(base_url('admin_news'));
+
+        }else{
+            $this->session->set_flashdata('err',"Boşluq buraxmayın!");
+            redirect($_SERVER['HTTP_REFERER']);
+        }
 
     }
 

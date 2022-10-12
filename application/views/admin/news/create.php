@@ -20,6 +20,17 @@
 
         <div class="card-body">
 
+            <?php if ($this->session->userdata('err')) { ?>
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                    <use xlink:href="#exclamation-triangle-fill" />
+                  </svg>
+                  <div>
+                    <?php echo $this->session->flashdata('err'); ?>
+                  </div>
+                </div>
+            <?php } ?>
+
             <form action="<?php echo base_url('admin_news_create_act'); ?>" method="post" enctype="multipart/form-data">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" class="form-control">
