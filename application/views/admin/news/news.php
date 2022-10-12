@@ -10,7 +10,11 @@
 </style>
 <div class="content_r">
     <div class="card">
-        <h5 class="card-header spaceB">News List <button type="button" class="btn  btn-sm btn-success">Create</button></h5>
+        <h5 class="card-header spaceB">News List 
+            <a href="<?php echo base_url('admin_news_create') ?>">
+                <button type="button" class="btn  btn-sm btn-success">Create</button>
+            </a>   
+        </h5>
         
         <div class="card-body">
             <div class="table-responsive text-nowrap">
@@ -22,6 +26,7 @@
                             <th>Date</th>
                             <th>Category</th>
                             <th>Creator name</th>
+                            <th>Img</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
@@ -34,6 +39,9 @@
                             <td>10.01.2022</td>
                             <td>Education</td>
                             <td>Rashid</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
                             <td>
                                 <span class="badge bg-label-success me-1">Active</span>
                             </td>
@@ -52,6 +60,9 @@
                             <td>Education</td>
                             <td>Rashid</td>
                             <td>
+                                <img src="" alt="">
+                            </td>
+                            <td>
                                 <span class="badge bg-label-danger me-1">Deactive</span>
                             </td>
                             <td>
@@ -68,6 +79,9 @@
                             <td>10.01.2022</td>
                             <td>Education</td>
                             <td>Rashid</td>
+                            <td>
+                                <img src="" alt="">
+                            </td>
                             <td>
                                 <span class="badge bg-label-success me-1">Active</span>
                             </td>

@@ -66,6 +66,10 @@ $route['admin_dashboard']  = 'AdminController/dashboard';
 $route['admin_news']       = 'AdminController/news';
 
 
+$route['admin_news_create']     = 'AdminController/news_create';
+$route['admin_news_create_act'] = 'AdminController/news_create_act';
+
+
 // ====================== Admin End   =======================================
 
 

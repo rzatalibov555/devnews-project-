@@ -46,21 +46,34 @@ class AdminController extends CI_Controller{
         redirect(base_url('login_dashboard'));
     }
 
-
-
-
     public function dashboard(){
 
         $data['admin'] = $this->db->where('a_id',$_SESSION['admin_login_id'])->get('admin')->row_array();
-     
         $this->load->view('admin/index',$data);
     }
+
+    // ====================== NEWS START ============================
 
     public function news(){
         $this->load->view('admin/news/news');
     }
 
+    public function news_create(){
+        $this->load->view('admin/news/create');
+    }
 
+    public function news_create_act(){
+        
+        $title          = $_POST['title'];
+        $description    = $_POST['description'];
+        $date           = $_POST['date'];
+        $category       = $_POST['category'];
+        $status         = $_POST['status'];
+        
+
+    }
+
+    // ====================== NEWS END   ============================
 
 
 }
