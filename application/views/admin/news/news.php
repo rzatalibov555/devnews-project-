@@ -39,6 +39,7 @@ $this->load->view('admin/includes/headerStyle'); ?>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Title</th>
                             <th>Date</th>
                             <th>Category</th>
@@ -50,9 +51,9 @@ $this->load->view('admin/includes/headerStyle'); ?>
                     </thead>
                     <tbody>
 
-
-                        <?php foreach ($get_all_news as $item) { ?>
+                        <?php $say = 0; foreach ($get_all_news as $item) { $say++ ?>
                             <tr>
+                                <td><?php echo $say; ?></td>
                                 <td><?php echo $item['n_title']; ?></td>
                                 <td><?php echo date("d-m-Y", strtotime($item['n_date'])); ?></td>
                                 <td><?php echo $item['n_category']; ?></td>
