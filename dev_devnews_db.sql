@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2022 at 06:12 PM
+-- Generation Time: Oct 16, 2022 at 05:19 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -60,6 +60,7 @@ CREATE TABLE `news` (
   `n_category` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `n_status` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `n_img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `n_file_ext` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `n_creator_id` int(11) NOT NULL,
   `n_create_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `n_updater_id` int(11) NOT NULL,
@@ -70,16 +71,13 @@ CREATE TABLE `news` (
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`n_id`, `n_title`, `n_description`, `n_date`, `n_category`, `n_status`, `n_img`, `n_creator_id`, `n_create_date`, `n_updater_id`, `n_update_date`) VALUES
-(1, 'test', 'lorem ipsum dolar sit amet', '2022-10-12', 'Sport', 'Deactive', '', 1, '2022-10-12 19:25:17', 0, ''),
-(2, 'test2', 'lorem ipsum dolar sit amet2', '2022-10-12', 'ferrari', 'Active', '', 1, '2022-10-12 19:26:35', 0, ''),
-(3, 'SCZdxvfcgvbn', 'aCSzvdxbfcgvhbnm,', '2022-10-21', 'Sport', 'Active', '', 1, '2022-10-12 19:29:38', 0, ''),
-(6, 'Huseyn', 'WebDeveloper olaraq fealiyyete basladi.', '2022-10-12', 'Finance', 'Active', '', 1, '2022-10-12 19:36:44', 0, ''),
-(7, 'Raul', 'Backend developer olaraq caliwir.', '2022-10-13', 'Sport', 'Active', '', 1, '2022-10-12 19:37:38', 0, ''),
-(8, 'qDWAFESGRDTGFNHMJ,KJ', 'ADSZFDXFBCGNVHMBJNMK.,', '2022-10-12', 'Sport', 'Active', '', 1, '2022-10-12 19:39:55', 0, ''),
-(9, 'Men Proqramciyam', 'Lorem lorem lore bu menim lorem', '2022-10-12', 'Sport', 'Active', '', 2, '2022-10-12 20:07:34', 0, ''),
-(10, 'hahahaha', 'i am hahahaha', '2022-10-12', 'Sport', 'Deactive', '', 2, '2022-10-12 20:08:52', 0, ''),
-(11, 'tatatta', 'tatatata i am ayyayayaaytata', '2022-10-12', 'Sport', 'Active', '', 2, '2022-10-12 20:09:13', 0, '');
+INSERT INTO `news` (`n_id`, `n_title`, `n_description`, `n_date`, `n_category`, `n_status`, `n_img`, `n_file_ext`, `n_creator_id`, `n_create_date`, `n_updater_id`, `n_update_date`) VALUES
+(13, 'testik', 'Mestik', '2022-10-16', 'Sport', 'Active', '', '', 1, '2022-10-16 17:59:44', 0, ''),
+(14, 'FESTİK', 'TESTİK', '2022-10-19', 'Education', 'Deactive', '', '', 1, '2022-10-16 18:00:03', 0, ''),
+(15, 'Czsxvdcfvb nm ', 'aCzsxvdcv bnm', '2022-10-16', 'Education', 'Deactive', '7f9b55b56e5261353d61890eca8bb2d3.jpg', '.jpg', 1, '2022-10-16 18:19:46', 0, ''),
+(16, 'test file', 'check file format', '2022-10-17', 'Sport', 'Active', '691365716f4dafc6c99ef2fb91806e04.pdf', '.pdf', 1, '2022-10-16 18:25:30', 0, ''),
+(17, 'szvdxbfcgvhbj', 'Czsvxdcbfvgnbhjnm,.', '2022-10-17', 'Education', 'Active', '', '', 1, '2022-10-16 18:30:30', 0, ''),
+(19, 'asczvdxbfcgnvfmhbj,nk.l;.\';/;lk.j,hmgnfbdvcsxa', 'czxvdfbcg vhbjm hgnbfvdcsAXACsvdbfgnmhj,knj.ml.,', '2022-10-16', 'Sport', 'Active', 'e20179280439301f0c97d4f79ac69c29.jpg', '.jpg', 1, '2022-10-16 18:42:43', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -111,7 +109,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

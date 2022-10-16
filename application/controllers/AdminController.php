@@ -153,4 +153,16 @@ class AdminController extends CI_Controller
         $this->session->set_flashdata('success', "Məlumat uğurla silindi!");
         redirect(base_url('admin_news'));
     }
+
+    public function news_detail($id){
+
+        $data['single_news'] = $this->News_model->get_single_news($id);
+        // print_r('<pre>');
+        // print_r($data['single_news']);
+        // die();
+
+
+        $this->load->view('admin/news/detail',$data);
+    }
+
 }

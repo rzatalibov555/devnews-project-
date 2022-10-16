@@ -86,7 +86,10 @@ $this->load->view('admin/includes/headerStyle'); ?>
                                     
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-outline-info">Detail</button>
+                                    <a href="<?php echo base_url('admin_news_detail/'.$item['n_id']); ?>">
+                                        <button type="button" class="btn btn-sm btn-outline-info">Detail</button>
+                                    </a>
+                                    
                                     <button type="button" class="btn btn-sm btn-outline-warning">Edit</button>
                                     
                                     <a onclick="return confirm('Məlumatı silmək istədiyinizə əminsiniz?')" href="<?php echo base_url('admin_news_delete/'.$item['n_id']); ?>">
