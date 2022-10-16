@@ -58,7 +58,21 @@ $this->load->view('admin/includes/headerStyle'); ?>
                                 <td><?php echo $item['n_category']; ?></td>
                                 <td><?php echo $item['a_name']; ?></td>
                                 <td>
-                                    <img src="" alt="">
+                                    <?php if($item['n_img']){ ?>
+
+                                        <?php if($item['n_file_ext'] == ".pdf") { ?>
+                                            <img width="50" height="50" style="object-fit: cover;" src="https://media.istockphoto.com/vectors/icon-major-file-format-vector-icon-illustration-vector-id1298834280?k=20&m=1298834280&s=612x612&w=0&h=SxEbyHKi18H1XpPpKKzoppWgMM3x0tc3veN5e6wl7Y8=" alt="">
+                                            
+                                        <?php }else{ ?>
+                                            <img width="50" height="50" style="object-fit: cover;" src="<?php echo base_url('uploads/news/'.$item['n_img']); ?>" alt="">
+                                        <?php } ?>
+
+
+                                        
+                                    <?php }else{ ?>
+                                        <img width="50" height="50" style="object-fit: cover;" src="https://media.istockphoto.com/vectors/default-image-icon-vector-missing-picture-page-for-website-design-or-vector-id1357365823?k=20&m=1357365823&s=612x612&w=0&h=ZH0MQpeUoSHM3G2AWzc8KkGYRg4uP_kuu0Za8GFxdFc=" alt="">
+                                    <?php } ?>
+                                    
                                 </td>
                                 <td>
                                     <?php if($item['n_status'] == "Active"){ ?>
@@ -73,7 +87,11 @@ $this->load->view('admin/includes/headerStyle'); ?>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-info">Detail</button>
                                     <button type="button" class="btn btn-sm btn-outline-warning">Edit</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                                    
+                                    <a onclick="return confirm('Məlumatı silmək istədiyinizə əminsiniz?')" href="<?php echo base_url('admin_news_delete/'.$item['n_id']); ?>">
+                                        <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>
+                                    </a>
+                                    
                                 </td>
                             </tr>
                         <?php } ?>
