@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2022 at 05:19 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Oct 21, 2022 at 06:43 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,12 +72,12 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`n_id`, `n_title`, `n_description`, `n_date`, `n_category`, `n_status`, `n_img`, `n_file_ext`, `n_creator_id`, `n_create_date`, `n_updater_id`, `n_update_date`) VALUES
-(13, 'testik', 'Mestik', '2022-10-16', 'Sport', 'Active', '', '', 1, '2022-10-16 17:59:44', 0, ''),
-(14, 'FESTİK', 'TESTİK', '2022-10-19', 'Education', 'Deactive', '', '', 1, '2022-10-16 18:00:03', 0, ''),
-(15, 'Czsxvdcfvb nm ', 'aCzsxvdcv bnm', '2022-10-16', 'Education', 'Deactive', '7f9b55b56e5261353d61890eca8bb2d3.jpg', '.jpg', 1, '2022-10-16 18:19:46', 0, ''),
-(16, 'test file', 'check file format', '2022-10-17', 'Sport', 'Active', '691365716f4dafc6c99ef2fb91806e04.pdf', '.pdf', 1, '2022-10-16 18:25:30', 0, ''),
-(17, 'szvdxbfcgvhbj', 'Czsvxdcbfvgnbhjnm,.', '2022-10-17', 'Education', 'Active', '', '', 1, '2022-10-16 18:30:30', 0, ''),
-(19, 'asczvdxbfcgnvfmhbj,nk.l;.\';/;lk.j,hmgnfbdvcsxa', 'czxvdfbcg vhbjm hgnbfvdcsAXACsvdbfgnmhj,knj.ml.,', '2022-10-16', 'Sport', 'Active', 'e20179280439301f0c97d4f79ac69c29.jpg', '.jpg', 1, '2022-10-16 18:42:43', 0, '');
+(13, 'testiksd asd asd', 'Mestikas dsa dasd ', '2022-10-16', 'Sport', 'Active', '', '', 1, '2022-10-16 17:59:44', 2, '2022-10-21 20:37:50'),
+(14, 'FESTİK', 'TESTİK', '2022-10-19', 'Education', 'Deactive', '', '', 1, '2022-10-16 18:00:03', 1, '2022-10-21 20:23:17'),
+(15, 'SetHub', 'test', '2022-10-16', 'Education', 'Deactive', 'c525bbf0e129aca2e0fd6d5599232d64.jpg', '.jpg', 1, '2022-10-16 18:19:46', 2, '2022-10-21 20:37:40'),
+(16, 'test file', 'check file format', '2022-10-17', 'Sport', 'Active', '691365716f4dafc6c99ef2fb91806e04.pdf', '.pdf', 1, '2022-10-16 18:25:30', 1, '2022-10-21 20:16:13'),
+(19, 'SetHubsdsdsd', 'Online tedris kursu kanali.sdsdsd', '2022-10-21', 'Education', 'Active', '', '', 1, '2022-10-16 18:42:43', 2, '2022-10-21 20:32:49'),
+(22, 'adsfbgf', 'sddsvfbdgvhnbm', '2022-10-21', 'Sport', 'Deactive', 'c6dedf4d68b98df4e09da35687049b08.jpg', '.jpg', 2, '2022-10-21 20:38:49', 0, '');
 
 --
 -- Indexes for dumped tables
@@ -109,7 +109,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

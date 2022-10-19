@@ -46,11 +46,13 @@ $this->load->view('admin/includes/headerStyle'); ?>
                             <th>Creator name</th>
                             <th>Img</th>
                             <th>Status</th>
+                            <th>Updated</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                       
+                        
                         <?php $say = 0; foreach ($get_all_news as $item) { $say++ ?>
                             <tr>
                                 <td><?php echo $say; ?></td>
@@ -85,12 +87,22 @@ $this->load->view('admin/includes/headerStyle'); ?>
                                     <?php } ?>
                                     
                                 </td>
+
+                                <td>
+                                    <?php if($item['n_updater_id']){ ?>
+                                        Edited by <?php echo $item['a_name']; ?> 
+                                    <?php } ?>
+                                </td>
+
                                 <td>
                                     <a href="<?php echo base_url('admin_news_detail/'.$item['n_id']); ?>">
                                         <button type="button" class="btn btn-sm btn-outline-info">Detail</button>
                                     </a>
                                     
-                                    <button type="button" class="btn btn-sm btn-outline-warning">Edit</button>
+                                    <a href="<?php echo base_url('admin_news_edit/'.$item['n_id']); ?>">
+                                        <button type="button" class="btn btn-sm btn-outline-warning">Edit</button>
+                                    </a>
+                                    
                                     
                                     <a onclick="return confirm('Məlumatı silmək istədiyinizə əminsiniz?')" href="<?php echo base_url('admin_news_delete/'.$item['n_id']); ?>">
                                         <button type="button" class="btn btn-sm btn-outline-danger">Delete</button>

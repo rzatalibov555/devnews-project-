@@ -74,6 +74,11 @@ $route['admin_news_delete/(.*)'] = 'AdminController/delete_news/$1';
 $route['admin_news_detail/(.*)'] = 'AdminController/news_detail/$1';
 
 
+$route['admin_news_edit/(.*)']     = 'AdminController/news_edit/$1';
+$route['admin_news_edit_act/(.*)'] = 'AdminController/news_edit_act/$1';
+$route['admin_news_img_delete/(.*)'] = 'AdminController/news_img_delete/$1';
+
+
 // ====================== Admin End   =======================================
 
 
