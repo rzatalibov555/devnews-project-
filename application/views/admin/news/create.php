@@ -51,9 +51,9 @@
                     <label for="cate">Category</label>
                     <select name="category" id="cate" class="form-control">
                         <option value="">-SELECT-</option>
-                        <option value="Sport">Sport</option>
-                        <option value="Education">Education</option>
-                        <option value="Finance">Finance</option>
+                        <?php foreach($get_all_categories as $item){ ?>
+                            <option value="<?php echo $item['c_name']; ?>"><?php echo $item['c_name']; ?></option>
+                        <?php } ?>
                     </select>
                 </div>
 

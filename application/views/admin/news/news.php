@@ -90,7 +90,7 @@ $this->load->view('admin/includes/headerStyle'); ?>
 
                                 <td>
                                     <?php if($item['n_updater_id']){ ?>
-                                        Edited by <?php echo $item['a_name']; ?> 
+                                        Edited 
                                     <?php } ?>
                                 </td>
 

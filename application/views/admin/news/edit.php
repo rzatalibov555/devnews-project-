@@ -42,7 +42,7 @@
                 </div>
             <?php } ?>
 
-            <form action="<?php echo base_url('admin_news_edit_act/'.$get_single_data['n_id']); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo base_url('admin_news_edit_act/' . $get_single_data['n_id']); ?>" method="post" enctype="multipart/form-data">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" class="form-control" value="<?php echo $get_single_data['n_title']; ?>">
                 <br>
@@ -59,19 +59,12 @@
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" style="float: left; margin:0px 10px">
                     <label for="cate">Category</label>
                     <select name="category" id="cate" class="form-control">
-                        <option <?php if ($get_single_data['n_category'] == "") {
-                                    echo "SELECTED";
-                                } ?> value="">-SELECT-</option>
-                        <option <?php if ($get_single_data['n_category'] == "Sport") {
-                                    echo "SELECTED";
-                                } ?> value="Sport">Sport</option>
-                        <option <?php if ($get_single_data['n_category'] == "Education") {
-                                    echo "SELECTED";
-                                } ?> value="Education">Education</option>
-                        <option <?php if ($get_single_data['n_category'] == "Finance") {
-                                    echo "SELECTED";
-                                } ?> value="Finance">Finance</option>
+                        <?php foreach ($get_all_categories as $item) { ?>
+                            <option <?php if($item['c_name'] == $get_single_data['n_category']){ echo "SELECTED"; } ?> value="<?php echo $item['c_name']; ?>"><?php echo $item['c_name']; ?></option>
+                        <?php } ?>
                     </select>
+
+
                 </div>
 
 
@@ -104,12 +97,13 @@
 
                         <?php } else { ?>
                             <img width="100%" style="object-fit: cover;" src="<?php echo base_url('uploads/news/' . $get_single_data['n_img']); ?>" alt="">
-                            
-                            <a href="<?php echo base_url('admin_news_img_delete/'.$get_single_data['n_id']); ?>">
+                            <br>
+                            <br>
+                            <a href="<?php echo base_url('admin_news_img_delete/' . $get_single_data['n_id']); ?>">
                                 <button onclick="return confirm('Məlumatı silmək istədiyinizə əminsiniz?')" type="button" class="btn btn-danger">Delete img</button>
                             </a>
 
-                            
+
                         <?php } ?>
                     <?php } else { ?>
                         <img width="100%" style="object-fit: cover;" src="https://media.istockphoto.com/vectors/default-image-icon-vector-missing-picture-page-for-website-design-or-vector-id1357365823?k=20&m=1357365823&s=612x612&w=0&h=ZH0MQpeUoSHM3G2AWzc8KkGYRg4uP_kuu0Za8GFxdFc=" alt="">

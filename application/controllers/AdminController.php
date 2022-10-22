@@ -71,7 +71,8 @@ class AdminController extends CI_Controller
 
     public function news_create()
     {
-        $this->load->view('admin/news/create');
+        $data['get_all_categories'] = $this->News_model->get_all_categories();
+        $this->load->view('admin/news/create',$data);
     }
 
     public function news_create_act()
@@ -166,6 +167,7 @@ class AdminController extends CI_Controller
     }
 
     public function news_edit($id){
+        $data['get_all_categories'] = $this->News_model->get_all_categories();
         $data['get_single_data'] = $this->db->where('n_id',$id)->get('news')->row_array();
         $this->load->view('admin/news/edit',$data);
     }
