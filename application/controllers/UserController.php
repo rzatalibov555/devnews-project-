@@ -29,8 +29,27 @@ class UserController extends CI_Controller{
         $this->load->view('user/category');
     }
 
-    public function single(){
-        $this->load->view('user/post-details');
+    public function single($id){
+
+        $product_id = $this->uri->segment(2);
+
+        if(!is_numeric($product_id)){
+            redirect(base_url('home'));
+        }
+
+        $data['get_limit5_news'] = $this->User_news_model->get_limit5_news();
+        
+        $data['get_single_news'] = $this->User_news_model->get_single_news($id);
+
+        $data['get_all_categories'] = $this->User_news_model->get_all_categories();
+
+        if($data['get_single_news']){
+            $this->load->view('user/post-details',$data);
+        }else{
+            redirect(base_url('home'));
+        }
+        
+        
     }
 
     public function contact(){

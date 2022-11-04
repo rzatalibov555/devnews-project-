@@ -1,3 +1,11 @@
+
+<?php
+  $admin = $this->db
+  ->select('a_name')
+  ->where('a_id',$_SESSION['admin_login_id'])
+  ->get('admin')->row_array();
+?>
+
 <nav
             class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
             id="layout-navbar"
@@ -54,7 +62,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
+                            <span class="fw-semibold d-block"><?php echo $admin['a_name']; ?></span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>

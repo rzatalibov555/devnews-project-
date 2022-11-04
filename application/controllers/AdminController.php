@@ -35,6 +35,7 @@ class AdminController extends CI_Controller
             if ($check_admin) {
 
                 $_SESSION['admin_login_id'] = $check_admin['a_id'];
+                $_SESSION['admin_login_name'] = $check_admin['a_name'];
                 redirect(base_url('admin_dashboard'));
             } else {
                 $this->session->set_flashdata('err', 'Email ve ya sifre yalnisdir!');
@@ -105,6 +106,7 @@ class AdminController extends CI_Controller
                 $data = [
                     'n_title'       => $title,
                     'n_description' => $description,
+                    // 'url'           => $title."-".md5($description)
                     'n_date'        => $date,
                     'n_category'    => $category,
                     'n_status'      => $status,

@@ -9,13 +9,15 @@
 
           <?php foreach ($get_all_news as $item) { ?>
             <div class="item">
+              <a href="<?php echo base_url('single/'.$item['n_id']); ?>">
               <img width="100%" height="400" style="object-fit: cover;" src="<?php echo base_url('uploads/news/' . $item['n_img']); ?>" alt="">
+              </a>
               <div class="item-content">
                 <div class="main-content">
                   <div class="meta-category">
                     <span><?php echo $item['n_category']; ?></span>
                   </div>
-                  <a href="post-details.html">
+                  <a href="<?php echo base_url('single/'.$item['n_id']."/".$item['n_title']); ?>">
                     <h4><?php echo $item['n_title']; ?></h4>
                   </a>
                   <ul class="post-info">

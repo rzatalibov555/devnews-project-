@@ -19,9 +19,6 @@
                 <a class="nav-link" href="<?php echo base_url('category'); ?>">Category</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('single'); ?>">Post Details</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('contact'); ?>">Contact Us</a>
               </li>
             </ul>

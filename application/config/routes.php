@@ -53,7 +53,7 @@ $route['default_controller'] = 'UserController';
 $route['home']      = 'UserController/index';
 $route['about_us']  = 'UserController/about';
 $route['category']  = 'UserController/category';
-$route['single']    = 'UserController/single';
+$route['single/(.*)']    = 'UserController/single/$1';
 $route['contact']   = 'UserController/contact';
 
 // ====================== Admin Start =======================================

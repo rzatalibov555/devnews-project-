@@ -35,4 +35,9 @@ class User_news_model extends CI_Model {
     }
 
 
+    public function get_single_news($id){
+        return $this->db->where('n_id',$id)->get('news')->row_array();
+    }
+
+
 }
