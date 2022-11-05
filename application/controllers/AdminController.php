@@ -25,6 +25,7 @@ class AdminController extends CI_Controller
                 'a_mail' => $email,
                 'a_password' => md5($pass),
             ];
+            $data = $this->security->xss_clean($data);
 
             // print_r('<pre>');
             // print_r($data);
@@ -115,7 +116,8 @@ class AdminController extends CI_Controller
                     'n_creator_id'  => $_SESSION['admin_login_id'],
                     'n_create_date' => date("Y-m-d H:i:s")
                 ];
-                
+                $data = $this->security->xss_clean($data);
+
                 // insert to db code
                 $this->News_model->insert_news($data);
                  
@@ -135,6 +137,7 @@ class AdminController extends CI_Controller
                     'n_creator_id'  => $_SESSION['admin_login_id'],
                     'n_create_date' => date("Y-m-d H:i:s")
                 ];
+                $data = $this->security->xss_clean($data);
                 
                 // insert to db code
                 $this->News_model->insert_news($data);
@@ -152,12 +155,16 @@ class AdminController extends CI_Controller
 
     public function delete_news($id)
     {
+        $id = $this->security->xss_clean($id);
+        
         $this->News_model->delete_news_from_id($id);
         $this->session->set_flashdata('success', "Məlumat uğurla silindi!");
         redirect(base_url('admin_news'));
     }
 
     public function news_detail($id){
+
+        $id = $this->security->xss_clean($id);
 
         $data['single_news'] = $this->News_model->get_single_news($id);
         // print_r('<pre>');
@@ -169,12 +176,16 @@ class AdminController extends CI_Controller
     }
 
     public function news_edit($id){
+        $id = $this->security->xss_clean($id);
+
         $data['get_all_categories'] = $this->News_model->get_all_categories();
         $data['get_single_data'] = $this->db->where('n_id',$id)->get('news')->row_array();
         $this->load->view('admin/news/edit',$data);
     }
 
     public function news_edit_act($id){
+
+        $id = $this->security->xss_clean($id);
 
         $title          = $_POST['title'];
         $description    = $_POST['description'];
@@ -206,6 +217,8 @@ class AdminController extends CI_Controller
                     'n_updater_id'  => $_SESSION['admin_login_id'],
                     'n_update_date' => date("Y-m-d H:i:s")
                 ];
+
+                $data = $this->security->xss_clean($data);
                 
                 // insert to db code
                 $this->News_model->update_news($id, $data);
@@ -227,6 +240,7 @@ class AdminController extends CI_Controller
                     'n_updater_id'  => $_SESSION['admin_login_id'],
                     'n_update_date' => date("Y-m-d H:i:s")
                 ];
+                $data = $this->security->xss_clean($data);
                 
                 // update in db info
                 $this->News_model->update_news($id, $data);
@@ -244,10 +258,15 @@ class AdminController extends CI_Controller
 
     public function news_img_delete($id){
      
+        $id = $this->security->xss_clean($id);
+        
         $data = [
             'n_img' =>"",
             'n_file_ext' =>"",
         ];
+
+        $data = $this->security->xss_clean($data);
+
         $this->News_model->update_news($id, $data);
         $this->session->set_flashdata('success', "Şəkil uğurla silindi!");
         redirect($_SERVER['HTTP_REFERER']);

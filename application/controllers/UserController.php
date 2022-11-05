@@ -25,8 +25,18 @@ class UserController extends CI_Controller{
         $this->load->view('user/about');
     }
 
-    public function category(){
-        $this->load->view('user/category');
+    public function category($category){
+        $data['category'] = $this->User_news_model->get_category($category);
+        // print_r("<pre>");
+        // print_r($data['category']);
+        // die();
+
+        if($data['category']){
+            $this->load->view('user/category',$data);
+        }else{
+            redirect(base_url('home'));
+        }
+        
     }
 
     public function single($id){
@@ -55,6 +65,8 @@ class UserController extends CI_Controller{
     public function contact(){
         $this->load->view('user/contact');
     }
+
+
 
 
 }

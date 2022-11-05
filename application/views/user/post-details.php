@@ -104,7 +104,7 @@
                 <div class="content">
                   <ul>
                     <?php foreach ($get_all_categories as $item) { ?>
-                      <li><a href="<?php echo $item['c_name']; ?>"><?php echo $item['c_name']; ?></a></li>
+                      <li><a href="<?php echo base_url('category/'.$item['c_name']); ?>"><?php echo $item['c_name']; ?></a></li>
                     <?php } ?>
                   </ul>
                 </div>

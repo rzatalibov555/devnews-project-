@@ -77,7 +77,7 @@
                       </div>
                       <div class="down-content">
                         <span><?php echo $item['n_category']; ?></span>
-                        <a href="post-details.html">
+                        <a href="<?php echo base_url('single/'.$item['n_id']); ?>">
                           <h4><?php echo $item['n_title']; ?></h4>
                         </a>
                         <ul class="post-info">
@@ -118,7 +118,7 @@
                       <ul>
                         <?php foreach($get_limit5_news as $item){ ?>
                           <li>
-                            <a href="post-details.html">
+                            <a href="<?php echo base_url('single/'.$item['n_id']); ?>">
                               <h5><?php echo $item['n_title']; ?></h5>
                               <span><?php echo date("M d Y", strtotime($item['n_date'])); ?></span>
                             </a>
@@ -139,7 +139,7 @@
                     <div class="content">
                       <ul>
                         <?php foreach($get_all_categories as $item){ ?>
-                          <li><a href="<?php echo $item['c_name']; ?>"><?php echo $item['c_name']; ?></a></li>
+                          <li><a href="<?php echo base_url('category/'.$item['c_name']) ?>"><?php echo $item['c_name']; ?></a></li>
                         <?php } ?>
                         
                         

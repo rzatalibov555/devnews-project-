@@ -39,5 +39,9 @@ class User_news_model extends CI_Model {
         return $this->db->where('n_id',$id)->get('news')->row_array();
     }
 
+    public function get_category($category){
+        return $this->db->where('n_category', $category)->get('news')->result_array();
+    }
+
 
 }
